@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Paste</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Paste Content</h2>
+<pre id="pasteContent">Loading...</pre>
+
+<script>
+const id = window.location.pathname.split("/").pop();
+
+fetch(`/api/pastes/${id}`)
+  .then(res => {
+    if (!res.ok) throw new Error();
+    return res.json();
+  })
+  .then(data => {
+    document.getElementById("pasteContent").textContent = data.content;
+  })
+  .catch(() => {
+    document.body.innerHTML = "<h2>Paste not found or expired</h2>";
+  });
+</script>
+
+</body>
+</html>

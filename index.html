@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pastebin Lite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Create Paste</h2>
+<textarea id="content" placeholder="Enter text..."></textarea>
+
+<input type="number" id="ttl" placeholder="TTL seconds (optional)">
+<input type="number" id="views" placeholder="Max views (optional)">
+
+<button onclick="createPaste()">Create Paste</button>
+
+<p id="result"></p>
+
+<script src="app.js"></script>
+</body>
+</html>
